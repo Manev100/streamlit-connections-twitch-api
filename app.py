@@ -45,7 +45,7 @@ with tab1:
    st.dataframe(streamer_data[streamer_info_cols], use_container_width=True)
 
    if stream_option:
-      components.iframe(f"https://player.twitch.tv/?channel={stream_option}&parent=localhost", width=800, height=600, scrolling=False)
+      components.iframe(f"https://player.twitch.tv/?channel={stream_option}&parent=twitch-tv-api-connection.streamlit.app", width=800, height=600, scrolling=False)
 
 with tab2:
    st.write("As a second option, we can directly search for a stream.")
@@ -65,6 +65,6 @@ with tab2:
       st.dataframe(search_results[search_results["broadcaster_login"] == stream_select][streamer_info_cols].T, use_container_width=True)
 
       if stream_select:
-         components.iframe(f"https://player.twitch.tv/?channel={stream_select}&parent=localhost", width=800, height=600, scrolling=False)
+         components.iframe(f"https://player.twitch.tv/?channel={stream_select}&parent=twitch-tv-api-connection.streamlit.app", width=800, height=600, scrolling=False)
 
 
